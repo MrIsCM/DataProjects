@@ -6,4 +6,4 @@ To begin with, I have used recommendations from chatGPT.
 
 ## Projects
 
-- [Project 1: Sales Data Analysis](project1/): Description of project 1.
+- [Project 1: Sales Data Analysis](P1_Sales_DA/description.md): Description of project 1.
