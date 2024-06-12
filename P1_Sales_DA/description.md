@@ -24,6 +24,19 @@ The data set (obtained from [Kaggle](https://www.kaggle.com/datasets/rohitsahoo/
 
 # Analysis
 
-## 1. Data exploration and cleaning
+## 0. Data cleaning
 
 First, some exploration will be done. Checking for missing values, duplicates, data types, etc and solve any issues found.
+
+Postal code for Burlington, Vermont is missing. Filled with appropriate value (5401).
+
+## 1. Data exploration
+
+Eploring (and plotting) the data to understand the distribution of sales in function of the different variables.
+
+By revenue:
+
+- Top customers
+- Top cities  
+- Top states
+- Top categories
