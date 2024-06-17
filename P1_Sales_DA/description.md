@@ -40,3 +40,7 @@ By revenue:
 - Top cities  
 - Top states
 - Top categories
+
+# Predictions
+
+Some prediction for the next days.
