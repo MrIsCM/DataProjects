@@ -23,7 +23,7 @@ def set_freq(df, freq=None):
 		DataFrame with the new frequency
 	
 	"""
-	
+
 	if freq is None:
 		freq = pd.infer_freq(df.index)
 
