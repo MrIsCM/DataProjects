@@ -46,4 +46,4 @@ def extend_time(df, t_min=None, t_max=None, dt=None):
 
 	new_index = pd.date_range(start=t_min, end=t_max, freq=freq)
 
-	return df.reinfex(new_index)
+	return df.reindex(new_index)
