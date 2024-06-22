@@ -7,7 +7,23 @@ import seaborn as sns
 def set_freq(df, freq=None):
 	"""
 	Set frequency of DateTimeIndex
+
+	Parameters:
+	-----------
+	df: pandas.DataFrame
+		DataFrame with DateTimeIndex
+
+	freq: str
+		Frequency to be set
+		if None, the frequency is inferred from the DataFrame index
+
+	Returns:
+	--------
+	pandas.DataFrame
+		DataFrame with the new frequency
+	
 	"""
+	
 	if freq is None:
 		freq = pd.infer_freq(df.index)
 
@@ -15,8 +31,40 @@ def set_freq(df, freq=None):
 
 def extend_time(df, t_min=None, t_max=None, dt=None):
 	"""
-	Extend the time index of the dataframe df from t_min to t_max with and a dt interval.
-	Some parameters might be omited
+	Extend the time index of the dataframe 'df' from 't_min' to 't_max' and a 'dt' interval.
+	Some parameters might be omited.
+
+	Parameters:
+	-----------
+	df: pandas.DataFrame
+		DataFrame to be extended
+
+	t_min: pd.Timestamp
+		Minimum time index
+		if None, the minimum time index of the DataFrame is used
+
+	t_max: pd.Timestamp
+		Maximum time index
+		if None, the maximum time index of the DataFrame is used
+
+	dt: int or pd.Timedelta
+		Time interval to be added to the time index
+		
+		- if int:
+			- if positive, dt periods are added to t_max
+			- if negative, dt periods are subtracted from t_min
+		
+		- else, it is converted to pd.Timedelta
+			- if positive, dt is added to t_max
+			- if negative, dt is subtracted from t_min
+
+	If all the parameters are None, dt = 1.
+
+	Returns:
+	--------
+	pandas.DataFrame
+		DataFrame with extended time index
+	
 	"""
 
 	freq = df.index.freq
