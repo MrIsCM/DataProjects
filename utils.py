@@ -96,6 +96,71 @@ def extend_time(df, t_min=None, t_max=None, dt=None):
 
 	return df.reindex(new_index)
 
+
+def RMSE(y_true, y_pred):
+	"""
+	Calculate the Root Mean Squared Error (RMSE) between two arrays
+
+	Parameters:
+	-----------
+	y_true: array-like
+		True values
+
+	y_pred: array-like
+		Predicted values
+
+	Returns:
+	--------
+	float
+		RMSE value
+
+	"""
+
+	return np.sqrt(np.mean((y_true - y_pred)**2))
+
+def MAE(y_true, y_pred):
+	"""
+	Calculate the Mean Absolute Error (MAE) between two arrays
+
+	Parameters:
+	-----------
+	y_true: array-like
+		True values
+
+	y_pred: array-like
+		Predicted values
+
+	Returns:
+	--------
+	float
+		MAE value
+
+	"""
+
+	return np.mean(np.abs(y_true - y_pred))
+
+def MAPE(y_true, y_pred):
+	"""
+	Calculate the Mean Absolute Percentage Error (MAPE) between two arrays
+
+	Parameters:
+	-----------
+	y_true: array-like
+		True values
+
+	y_pred: array-like
+		Predicted values
+
+	Returns:
+	--------
+	float
+		MAPE value
+
+	"""
+
+	return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
+
 # Test function
 def rlabel(ax, label=None, **kw):
     """Add a right-side axis title."""
