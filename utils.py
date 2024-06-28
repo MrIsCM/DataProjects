@@ -95,3 +95,13 @@ def extend_time(df, t_min=None, t_max=None, dt=None):
 	new_index = pd.date_range(start=t_min, end=t_max, freq=freq)
 
 	return df.reindex(new_index)
+
+# Test function
+def rlabel(ax, label=None, **kw):
+    """Add a right-side axis title."""
+    if label is None:
+        ax, label = plt.gca(), ax
+    bbox = kw.pop('bbox', dict(facecolor='.9', alpha=0.2))
+    ax.text(1, .5, label,
+            rotation=-90, ha='left', va='center', transform=ax.transAxes,
+            bbox=bbox, **kw)
