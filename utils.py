@@ -160,6 +160,53 @@ def MAPE(y_true, y_pred):
 
 	return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
 
+def MSE(y_true, y_pred):
+	"""
+	Calculate the Mean Squared Error (MSE) between two arrays
+
+	Parameters:
+	-----------
+	y_true: array-like
+		True values
+
+	y_pred: array-like
+		Predicted values
+
+	Returns:
+	--------
+	float
+		MSE value
+
+	"""
+
+	return np.mean((y_true - y_pred)**2)
+
+def MASE(y_true, y_pred, y_naive):
+	"""
+	Calculate the Mean Absolute Scaled Error (MASE) between two arrays
+
+	Parameters:
+	-----------
+	y_true: array-like
+		True values
+
+	y_pred: array-like
+		Predicted values
+
+	y_naive: array-like
+		Naive forecast values
+
+	Returns:
+	--------
+	float
+		MASE value
+
+	"""
+
+	return np.mean(np.abs(y_true - y_pred)) / np.mean(np.abs(y_true - y_naive))
+
+
+
 
 # Test function
 def rlabel(ax, label=None, **kw):
